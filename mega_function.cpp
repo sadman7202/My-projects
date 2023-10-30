@@ -61,7 +61,18 @@ int sumseries(int x)
     return answer;
     
 }
-//f for d to binary
+void decimaltobinary(int n)
+{
+    int result=0,rem,i=1;
+    while (n!=0) {
+    rem = n % 2;
+    n /= 2;
+    result += rem * i;
+    i *= 10;
+    }
+    cout<<"Your Binary number is : "<<result<<endl;
+}
+//f for binary to decimal
 void binarytodecimal(int n)
 {
     int ans=0;
@@ -90,7 +101,7 @@ int main()
     cout<<"3.Fibonacci series"<<endl;
     cout<<"4.Factorial"<<endl;
     cout<<"5.Sum of series"<<endl;
-    cout<<"Number conversions"<<endl;
+    cout<<"6.Number conversions"<<endl;
     int i,a,b,n,p;
     cout<<"Enter your choice: ";
     cin>>n;
@@ -139,11 +150,18 @@ int main()
     int n;
     cin>>n;
     switch(n){
+        case(1):
+        cout<<"Enter your Decimal Number: "<<endl;
+        cin>>n;
+        decimaltobinary(n);
+        break;
+
         case(2):
         int n;
         cout<<"Enter your Binary number: "<<endl;
         cin>>n;
         binarytodecimal(n);
+        break;
 
 
 
